@@ -6,12 +6,7 @@ const dotenv = require('dotenv').config();
 
 
 const app = express();
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 
 // Connect to MongoDB
@@ -39,8 +34,8 @@ app.get('/api/phones', async (req, res) => {
     res.send(phones);
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
-    console.log('Server is running on http://localhost:3000');
+    console.log('Server is running on http://localhost:8000');
 });
