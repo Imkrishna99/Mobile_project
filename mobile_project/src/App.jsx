@@ -12,12 +12,12 @@ const App = () => {
 //fetching the data from the API 
     useEffect(() => {
         const fetchPhones = async () => {
-            const response = await axios.get('http://localhost:5000/api/phones');
+            const response = await axios.get('http://localhost:8000/api/phones');
             setPhones(response.data);
         };
 
         fetchPhones();
-        const interval = setInterval(fetchPhones, 5000); // Fetch every 5 seconds
+        const interval = setInterval(fetchPhones, 5000);
 
         return () => clearInterval(interval);
     }, []);
@@ -25,7 +25,7 @@ const App = () => {
     //using onSubmit handle to post the data using axios.
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/api/phones', {
+        await axios.post('http://localhost:8000/api/phones', {
             brand,
             year: Number(year),
             price: Number(price),
