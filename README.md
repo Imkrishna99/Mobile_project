@@ -1,4 +1,4 @@
-<h4>Follow below steps while clining or after downloading the Project</h4>
+<h4>Follow below steps while cloning or after downloading the Project</h4>
 IN BACKEND YOU HAVE TO GIVE <h3>npm install</h3>
 
 TO AUTO POPULATE THE DATA YOU HAVE TO RUN THE populate.js file and command is
