@@ -16,8 +16,7 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 
-mongoose.connect(process.env.MONGO_URI).then(()=>console.log("DB CONNECTED IN INDEX")).catch(err){console.log("err in MONGODB")};
-
+mongoose.connect(process.env.MONGO_URI).then(()=>console.log("DB CONNECTED IN INDEX"));
 const phoneSchema = new mongoose.Schema({
     brand: String,
     year: Number,
