@@ -6,12 +6,17 @@ const dotenv = require('dotenv').config();
 
 
 const app = express();
-app.use(cors());
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
 
-mongoose.connect(process.env.MONGO_URI).then(()=>console.log("DB CONNECTESD IN INDEX"));
+mongoose.connect(process.env.MONGO_URI).then(()=>console.log("DB CONNECTED IN INDEX")).catch(err){console.log("err in MONGODB")};
 
 const phoneSchema = new mongoose.Schema({
     brand: String,
